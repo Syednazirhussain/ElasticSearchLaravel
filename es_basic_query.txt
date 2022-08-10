@@ -1,0 +1,27 @@
+###### Elastic Search ###### 
+
+###### Store Record's ###### 
+
+PUT	/product/_doc/1
+{
+	"name": "sample product",
+	"price": 23,
+	"description": "some description"
+}
+
+###### GET Record's ######
+
+GET	/product/_doc/1
+
+###### UPDATE Record's ######
+
+POST /product/_update/1
+{
+	"doc": {
+		"price": "500"
+	}
+}
+
+###### DELETE Record's ######
+
+DELETE /product/_doc/1

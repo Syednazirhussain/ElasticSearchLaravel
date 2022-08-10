@@ -1,0 +1,143 @@
+########## Laravel Elastic Search #################
+
+Elastic Cloud Credentials
+
+Login URL: https://cloud.elastic.co/login
+
+> username: elastic
+> password: yYHqsilAhTjdtctea6dubeFc
+
+https://platform.cloudways.com/login
+
+Cloudways Password
+> 2gjFfN.PSnuTcEN
+
+
+Getting started with Elasticsearch
+https://testdeployment-47c551.kb.us-east-2.aws.elastic-cloud.com:9243/app/enterprise_search/elasticsearch
+
+Deployments
+https://cloud.elastic.co/deployments/47c5517ce7674774b928a5176bbd99d5
+
+Managment
+https://testdeployment-47c551.kb.us-east-2.aws.elastic-cloud.com:9243/app/management/security/api_keys
+
+
+Elastic Search Laravel Integration
+https://www.cloudways.com/blog/setup-elasticsearch-with-laravel/
+
+Elastic Search MySQL Integration
+https://www.cloudways.com/blog/setup-elasticsearch-with-mysql/
+
+Elastic Search PHP Integration
+https://www.elastic.co/guide/en/elasticsearch/client/php-api/8.3/installation.html
+https://www.elastic.co/guide/en/elasticsearch/client/php-api/current/index.html
+
+Getting started: Deploy your own platform to store, search, and visualize any dataedit
+https://www.elastic.co/guide/en/welcome-to-elastic/current/getting-started-general-purpose.html
+
+############ Laravel Elastic Search Packages ############
+
+General Package <composer require elasticsearch/elasticsearch>
+https://github.com/elastic/elasticsearch-php
+
+Laravel Support Package <composer require cviebrock/laravel-elasticsearch>
+https://github.com/cviebrock/laravel-elasticsearch 
+
+
+*  *  *  *  *  /home/master_dtwhzpenqk/user-laravel-app/public_html artisan schedule:run #CloudwaysApps
+
+
+######################## Download And Setup Elastic Search for Ubuntu #############################
+
+https://www.elastic.co/guide/en/elasticsearch/reference/8.3/deb.html
+
+--------------------------- Security autoconfiguration information ------------------------------
+
+Authentication and authorization are enabled.
+TLS for the transport and HTTP layers is enabled and configured.
+
+The generated password for the elastic built-in superuser is : cukv2+-GUL=elOKCDsjd
+
+If this node should join an existing cluster, you can reconfigure this with
+'/usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token <token-here>'
+after creating an enrollment token on your existing cluster.
+
+You can complete the following actions at any time:
+
+Reset the password of the elastic built-in superuser with 
+'/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic'.
+
+Generate an enrollment token for Kibana instances with 
+ '/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana'.
+
+Generate an enrollment token for Elasticsearch nodes with 
+'/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node'.
+
+--------------------------- Security autoconfiguration information ------------------------------
+
+
+Elasticsearch can be started and stopped as follows:
+
+> sudo systemctl start elasticsearch.service
+> sudo systemctl stop elasticsearch.service
+
+Check elastic search user and group names
+
+> sudo less /etc/passwd | grep "elasticsearch"
+> sudo less /etc/group | grep "elasticsearch"
+
+Elastic search change ownership
+
+Steps:
+
+1.Change owership of all ES related files from root to elasticsearch using example cmd below.
+
+> sudo chown elasticsearch:elasticsearch -R /usr/share/elasticsearch
+> sudo chown elasticsearch:elasticsearch -R /var/log/elasticsearch
+> sudo chown elasticsearch:elasticsearch -R /var/lib/elasticsearch
+> sudo chown elasticsearch:elasticsearch -R /etc/default/elasticsearch
+> sudo chown elasticsearch:elasticsearch -R /etc/elasticsearch
+
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+Follow link
+https://stackoverflow.com/questions/40766301/running-elasticsearch-as-the-root-user
+
+4. Test elasticsearch by using curl. Say your host ip is 192.168.5.194 and ES running on port 9200
+> curl -X GET ‘192.168.5.194:9200’
+
+Set elastic search configurations
+sudo subl /etc/elasticsearch/elasticsearch.yml
+sudo subl /etc/default/elasticsearch
+
+
+http://127.0.0.1:9200/_cat/health?v=true
+
+--------------------------------------------------------------------------------------------------
+
+Check Java Path
+
+> echo $JAVA_HOME
+
+If Nothing then run below commanf
+
+> export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+This will differ according to your JDK type and version. For displaying it again, follow the first command.
+
+--------------------------------------------------------------------------------------------------
+
+
+https://www.elastic.co/downloads/kibana
+
+
+######################## Full-Text Search Packages ###########################
+
+https://github.com/laravel/scout
+
+chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
+
+chmod o+x /root/ /usr/share/elasticsearch
+
+chgrp elasticsearch /usr/share/elasticsearch
